@@ -14,7 +14,9 @@ url = f'http://www.mapquestapi.com/geocoding/v1/address?key={MAPQUEST_API_KEY}&l
 def get_url (place_name):
     """Write a function that takes an address or place name as input and 
     returns a properly encoded URL to make a MapQuest geocode request."""
-    pass
+
+    url = f'http://www.mapquestapi.com/geocoding/v1/address?key={MAPQUEST_API_KEY}&location={place_name}'
+    return url 
 
 def get_json(url):
     """
@@ -52,15 +54,21 @@ def get_lat_long(place_name):
     response_data = json.loads(response_text)
     latLng = response_data["results"][0]["locations"][0]['latLng']
     pprint(latLng)
+## got rid of return latLng because it just makes the function print it twice
 
-    return latLng
 
+## I think we need to write functions so that the latitude and longitude are in the right format for the station
+def lat()
+    pass
+
+def lon()
+    pass
 
 def get_nearest_station(latitude, longitude):
     """
     Given latitude and longitude strings, return a (station_name, wheelchair_accessible)
     tuple for the nearest MBTA station to the given coordinates.
-    See https://api-v3.mbta.com/docs/swagger/index.html#/Stop/ApiWeb_StopController_index for URL
+    See https://api-v3.mbta.com/docs/swagger/index.html#/Stop/ApiWeb_StopController_index for URLMAPQUEST_API_KEY = "6U83snPamoNXW3MWOCNJtwNnvBL6kELF"
     formatting requirements for the 'GET /stops' API.
     """
     pass
@@ -79,7 +87,11 @@ def main():
     """
     You can test all the functions here
     """
-    pass
+    # MAPQUEST_API_KEY = "6U83snPamoNXW3MWOCNJtwNnvBL6kELF"
+    # url = get_url('Denver,CO')
+    # print(get_json(url))
+
+    # get_lat_long('Denver,CO')
 
 
 if __name__ == '__main__':
